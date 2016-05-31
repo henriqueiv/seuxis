@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
+  <tabs>
+    <Tab text="Ingredientes">
+         <content>
+            <SplitPane dividerPositions="0.44333333333333336" prefHeight="160.0" prefWidth="200.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="188.0">
+                     <children>
+                        <ListView fx:id="ingredientListView" layoutX="4.0" layoutY="45.0" prefHeight="320.0" prefWidth="255.0" />
+                        <Button layoutX="77.0" layoutY="8.0" mnemonicParsing="false" onAction="#createIngredient" text="Novo Ingrediente" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="344.0">
+                     <children>
+                        <VBox fx:id="editPanel" alignment="TOP_CENTER" layoutX="1.0" prefHeight="371.0" prefWidth="330.0" spacing="15.0">
+                           <padding>
+                              <Insets bottom="20.0" left="5.0" right="5.0" top="20.0" />
+                           </padding>
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="136.0" spacing="10.0">
+                                       <children>
+                                          <Label text="Nome" />
+                                          <TextField fx:id="ingredientNameField" />
+                                          <Label text="Preço" />
+                                          <TextField fx:id="ingredientPriceField" prefHeight="25.0" prefWidth="27.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <ImageView fx:id="ingredientImageView" fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="88.0" prefWidth="320.0" spacing="10.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="136.0" spacing="10.0">
+                                       <children>
+                                          <Label text="Descrição" />
+                                          <TextField fx:id="ingredientDescriptionField" prefHeight="53.0" prefWidth="125.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </padding>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" prefHeight="88.0" prefWidth="166.0" spacing="5.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#selectImage" prefHeight="26.0" prefWidth="109.0" text="Selecionar Imagem">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Button>
+                                          <Button mnemonicParsing="false" onAction="#resetImage" prefHeight="23.0" prefWidth="92.0" text="Imagem Padrão">
+                                             <font>
+                                                <Font size="10.0" />
+                                             </font>
+                                          </Button>
+                                          <CheckBox fx:id="ingredientCheckBox" mnemonicParsing="false" prefHeight="30.0" prefWidth="149.0" text="Disponível no Cardapio" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                              <VBox alignment="CENTER" prefHeight="111.0" prefWidth="320.0" spacing="10.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#deleteIngredient" text="Deletar Ingrediente" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </content>
+    </Tab>
+    <Tab text="Pratos" />
+  </tabs>
+</TabPane>
