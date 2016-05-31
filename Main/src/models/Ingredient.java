@@ -3,6 +3,7 @@ package models;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import java.io.File;
 
 public final class Ingredient {
    
@@ -17,7 +18,8 @@ public final class Ingredient {
         description = "";
         price = 0;
         available = true;
-        img = ImageIO.read(this.getClass().getResource("defaultIngredient.jpg"));
+        
+        img = ImageIO.read(this.getClass().getResource("res/defaultIngredient.jpg"));
     }
     
     public String getName() {
