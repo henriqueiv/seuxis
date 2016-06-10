@@ -13,14 +13,14 @@ import javafx.collections.ObservableList;
  *
  * @author Matheus
  */
-public class Session {
+public class Menu {
     
     private ObservableList<Ingredient> ingredients;
     private int qtdIngredients = 1;
    
     
     
-    public Session() {
+    public Menu() {
 	ingredients = FXCollections.observableArrayList();
     }
     

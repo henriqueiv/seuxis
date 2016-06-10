@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.UserWindowController">
   <tabs>
     <Tab text="Ingredientes">
          <content>
@@ -50,10 +50,10 @@
                               </HBox>
                               <HBox prefHeight="88.0" prefWidth="320.0" spacing="10.0">
                                  <children>
-                                    <VBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="136.0" spacing="10.0">
+                                    <VBox alignment="TOP_CENTER" prefHeight="58.0" prefWidth="136.0" spacing="5.0">
                                        <children>
                                           <Label text="Descrição" />
-                                          <TextField fx:id="ingredientDescriptionField" prefHeight="53.0" prefWidth="125.0" />
+                                          <TextArea fx:id="ingredientDescriptionField" prefHeight="50.0" prefWidth="125.0" />
                                        </children>
                                        <padding>
                                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

@@ -1,56 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
-import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.embed.swing.SwingFXUtils;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckMenuItem;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.control.CheckBox;
-import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.ScrollEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.StrokeLineCap;
-import javafx.scene.transform.Affine;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import models.Ingredient;
-import models.Session;
-import java.awt.Image;
+import models.Menu;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.File;
 import javafx.scene.control.TabPane;
+import javafx.scene.control.TextArea;
 import javax.imageio.ImageIO;
 
-public class MainWindowController implements Initializable {
+public class ManagerWindowController implements Initializable {
 
-    private Session session;
+    private Menu menu;
     
     @FXML private VBox editPanel;
-    @FXML private TextField ingredientNameField, ingredientPriceField, ingredientDescriptionField;
+    @FXML private TextField ingredientNameField, ingredientPriceField;
+    @FXML private TextArea ingredientDescriptionField;
+    
     @FXML private ListView<Ingredient> ingredientListView;
     @FXML private ImageView ingredientImageView;
     @FXML private CheckBox ingredientCheckBox;
@@ -63,10 +41,12 @@ public class MainWindowController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        session = new Session();
+        menu = new Menu();
         editPanel.setVisible(false);
-
-        ingredientListView.setItems(session.getIngredients());
+        
+        ingredientDescriptionField.setWrapText(true);
+                
+        ingredientListView.setItems(menu.getIngredients());
         
         ingredientListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             selectedIngredient = newValue;			
@@ -102,9 +82,10 @@ public class MainWindowController implements Initializable {
 
     @FXML
     private void createIngredient() throws IOException {
-	selectedIngredient = session.createNewIngredient();
+	selectedIngredient = menu.createNewIngredient();
 		
 	ingredientListView.getSelectionModel().select(selectedIngredient);
+        updateEditingPane();
     }
     
     @FXML
@@ -115,7 +96,7 @@ public class MainWindowController implements Initializable {
     
     @FXML
     private void deleteIngredient() {
-	session.removeIngredient(selectedIngredient);
+	menu.removeIngredient(selectedIngredient);
     }
     
     @FXML
@@ -134,12 +115,13 @@ public class MainWindowController implements Initializable {
         updateEditingPane();
     }
     
+    @FXML
     private void updateEditingPane() {
 	editPanel.setVisible(selectedIngredient != null);
 		
-	if (selectedIngredient == null)
+	if (selectedIngredient == null) 
             return;
-		
+        
 	ingredientNameField.setText(selectedIngredient.getName());
         ingredientPriceField.setText(String.valueOf(selectedIngredient.getPrice()));
         ingredientDescriptionField.setText(selectedIngredient.getDescription());

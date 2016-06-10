@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginWindowController">
+   <children>
+      <Pane fx:id="loginPane" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TextField fx:id="cpfLoginTextField" layoutX="227.0" layoutY="233.0" prefHeight="32.0" prefWidth="105.0" />
+            <ImageView fx:id="logoLoginImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="184.0" layoutY="236.0" text="CPF:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="338.0" layoutY="233.0" mnemonicParsing="false" onAction="#enterWithLogin" prefHeight="33.0" prefWidth="79.0" text="Entrar">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="171.0" layoutY="28.0" text="BEM VINDO!">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="45.0" />
+               </font>
+            </Label>
+            <Button layoutX="239.0" layoutY="310.0" mnemonicParsing="false" onAction="#newRegister" prefHeight="32.0" prefWidth="123.0" text="Cadastre-se">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="220.0" layoutY="121.0" mnemonicParsing="false" onAction="#enterWithoutLogin" prefHeight="43.0" prefWidth="161.0" text="Entrar sem Login">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="266.0" layoutY="94.0" text="Opção 1:">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="239.0" layoutY="283.0" text="Não tem login?">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="216.0" layoutY="200.0" text="Opção 2: fazer Login">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="registerPane" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <ImageView fx:id="logoRegisterImageView" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="227.0" layoutY="54.0" text="Cadastro">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="36.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cpfRegisterTextField" layoutX="246.0" layoutY="150.0" prefHeight="32.0" prefWidth="161.0" />
+            <Label layoutX="202.0" layoutY="152.0" text="CPF*">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameRegisterTextField" layoutX="247.0" layoutY="210.0" prefHeight="32.0" prefWidth="161.0" />
+            <Label layoutX="186.0" layoutY="213.0" text="Nome*">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="190.0" layoutY="273.0" text="e-mail">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="emailRegisterTextField" layoutX="246.0" layoutY="270.0" prefHeight="32.0" prefWidth="161.0" />
+            <Button layoutX="237.0" layoutY="338.0" mnemonicParsing="false" onAction="#register" prefHeight="32.0" prefWidth="123.0" text="Cadastrar">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="214.0" layoutY="315.0" text="Campos com * são obrigatórios" />
+            <Button layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#backToLogin" prefHeight="33.0" prefWidth="79.0" text="Voltar">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -18,8 +18,7 @@ public final class Ingredient {
         description = "";
         price = 0;
         available = true;
-        
-        img = ImageIO.read(this.getClass().getResource("res/defaultIngredient.jpg"));
+        img = ImageIO.read(this.getClass().getResource("/resources/defaultIngredient.jpg"));
     }
     
     public String getName() {
@@ -63,7 +62,7 @@ public final class Ingredient {
     }
     
     public void resetImg() throws IOException {
-        img = ImageIO.read(this.getClass().getResource("defaultIngredient.jpg"));  
+        img = ImageIO.read(this.getClass().getResource("/resources/defaultIngredient.jpg"));  
     }
     
     public String toString() {
