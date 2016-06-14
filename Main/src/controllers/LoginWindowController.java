@@ -31,7 +31,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 import models.User;
-import models.UserDAO;
+import dao.UserDAO;
 
 /**
  * FXML Controller class

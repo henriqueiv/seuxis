@@ -5,13 +5,12 @@ package models;
  * @author Matheus
  */
 public class User {
-    int id;
-    String cpf;
-    String name;
-    String email;
-    String password;
-
-    boolean manager;
+    private int id;
+    private String cpf;
+    private String name;
+    private String email;
+    private String password;
+    private boolean manager;
     
     public static User loggedUser;
 
